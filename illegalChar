@@ -1,4 +1,0 @@
-program
-begin
-    #illegal char found here -> # %
-end
