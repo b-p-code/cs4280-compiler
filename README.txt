@@ -15,7 +15,7 @@ Running:
     usage: ./compfs [file] or ./compfs[< file]
 
 Testing:
-    Within the test folder is also a bash script and test files which were used to test
+    Within the zipped test file is a bash script and test files which were used to test
     this project. To run these tests, navigate to the test folder and type the command: 
     bash test.sh. Unfortunately, the majority of the test assembly programs generated
     were having trouble in the assembly executable on the delmar server. So, I tested each
