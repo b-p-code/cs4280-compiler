@@ -1,0 +1,21 @@
+# Program to have a user guess the hardcoded value #
+# 0 means you are below, 1 means above #
+whole hardcodedvalue := 50;
+program
+begin
+    whole in := 0;
+    input in;
+
+    while [ in != hardcodedvalue ]
+    begin
+        if [in < hardcodedvalue ] then
+            output 0;
+        pick
+            output 1;
+        ;
+        input in;
+    end;
+
+    # success code of 200 #
+    output 200;
+end
