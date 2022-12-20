@@ -6,7 +6,7 @@ and uses a lexical analyzer + parser + static semantic analyzer + code generator
 to translate a program in our given language to our target assembly language
 
 Compilation:
-    To compile, use the 'make' command along with the provided Makefile in the P4 directory
+    To compile, use the 'make' command along with the provided Makefile
 
 Running:
     To run, use ./compfs, since the Makefile will compile to the project directory
