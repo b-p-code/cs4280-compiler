@@ -1,0 +1,34 @@
+// CS4280 P4 Bryce Paubel 10/14/22
+// New and modified BNF to remove left recursion
+// and added some left factorization
+
+<program> -> <vars> program <block> (done)
+<block> -> begin <vars> <stats> end (done)
+<vars> -> whole Identifier := Integer ; <vars> | empty (done)
+
+<expr> -> <N> <expr'> (done - CHECK)
+<expr'> -> - <expr> | empty (done - CHECK)
+<N> -> <A> <N'> (done - CHECK)
+<N'> -> + <N> | * <N> | empty (done - CHECK)
+<A> -> <M> <A'> (done - CHECK)
+<A'> -> / <M> <A'> | empty (done - CHECK)
+<M> -> : <M> | <R> (done - CHECK)
+<R> -> ( <expr> ) | Identifier | Integer (done - CHECK)
+
+<stats> -> <stat> <mStat> (done)
+<mStat> -> <stat> <mStat> | empty (done)
+<stat> -> <in> ; | <out> ; | <block> | <if> ; | <loop> ; | <assign> ; | <goto> ; | <label> ; (done)
+
+<in> -> input Identifier (done)
+<out> -> output <expr> (done)
+
+<if> -> if [ <expr> <RO> <expr> ] then <stat> <if'> (done)
+<if'> -> pick <stat> | empty (done)
+
+<loop> -> while [ <expr> <RO> <expr> ] <stat>
+
+<assign> -> assign Identifier = <expr> (done)
+
+<RO> -> > | < | == | [=] | != (done, handled in if/pick and while)
+<label> -> label Identifier (done)
+<goto> -> warp Identifier (done)
